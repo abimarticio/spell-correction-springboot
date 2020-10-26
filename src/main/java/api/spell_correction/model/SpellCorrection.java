@@ -3,6 +3,8 @@ import java.io.File;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.FileNotFoundException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class SpellCorrection {
 	
@@ -20,5 +22,15 @@ public class SpellCorrection {
         }
         fileReader.close();
         return list;
+    }
+	
+	public static Map<String, String> createDictionary(ArrayList<String> list) {
+        Map<String, String> dictionary = new HashMap<String, String>();
+        for (int i = 0; i < list.size(); i++) {
+            String words = list.get(i);
+            String[] line = words.split(":");
+            dictionary.put(line[1], line[0]);
+        }
+        return dictionary;
     }
 }
