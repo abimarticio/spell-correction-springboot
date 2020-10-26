@@ -39,6 +39,11 @@ public class SpellCorrection {
         return dictionary;
     }
 	
+	/**
+	 * Returns corrections of spell errors.
+	 * @param dictionary The switched key and value of spell errors in dictionary.
+	 * @return The corrections of spell errors.
+	 */
 	public static Map<String, String> newDictionary(Map<String, String> dictionary) {
         Map<String, String> corrections = new HashMap<String, String>();
         for (Map.Entry<String,String> entry : dictionary.entrySet()) {
