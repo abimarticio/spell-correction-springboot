@@ -24,6 +24,11 @@ public class SpellCorrection {
         return list;
     }
 	
+	/**
+	 * Returns data in dictionary.
+	 * @param list The input data, spell errors in arraylist.
+	 * @return The switched key and value of spell errors in dictionary.
+	 */
 	public static Map<String, String> createDictionary(ArrayList<String> list) {
         Map<String, String> dictionary = new HashMap<String, String>();
         for (int i = 0; i < list.size(); i++) {
