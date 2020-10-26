@@ -38,4 +38,23 @@ public class SpellCorrection {
         }
         return dictionary;
     }
+	
+	public static Map<String, String> newDictionary(Map<String, String> dictionary) {
+        Map<String, String> corrections = new HashMap<String, String>();
+        for (Map.Entry<String,String> entry : dictionary.entrySet()) {
+            String value = entry.getValue();
+            String key = entry.getKey().strip();
+            if(key.contains(",")){
+            	String[] arrKey = key.split(",");
+	            for(int i = 0; i < arrKey.length; i++){
+	                key = arrKey[i].strip();
+	                corrections.put(key, value);
+            	}
+            }
+            else{
+            	corrections.put(key, value);
+            }
+        }
+        return corrections;
+	}
 }
