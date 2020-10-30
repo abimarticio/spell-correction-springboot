@@ -52,6 +52,7 @@ public class SpellCorrection {
             	corrections.put(key, value);
             }
         }
-        return corrections;
+        String correctWord = corrections.get(text);
+        return correctWord;
 	}
 }
