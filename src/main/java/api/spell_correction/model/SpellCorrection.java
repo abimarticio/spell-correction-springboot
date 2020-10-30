@@ -8,10 +8,10 @@ import java.util.Map;
 
 public class SpellCorrection {
 	
-	/**
-	 * Returns data in arraylist.
+	 /**
+	 * Returns load data in dictionary.
 	 * @param file The input data, spell errors text.
-	 * @return The data spell errors list.
+	 * @return The load data in dictionary.
 	 */
 	public static Map<String, String> loadDictionary(String file) throws FileNotFoundException {
 		Scanner fileReader = new Scanner(file);
