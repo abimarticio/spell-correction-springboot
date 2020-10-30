@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class SpellCorrection {
 	
-	static Map<String, String> dictionary;
+	Map<String, String> dictionary;
 	
 	public SpellCorrection(String file) throws FileNotFoundException {
 		SpellCorrection.dictionary = loadDictionary(file);
