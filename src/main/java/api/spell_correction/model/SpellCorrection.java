@@ -32,15 +32,6 @@ public class SpellCorrection {
 	}
 	
 	/**
-	 * Returns data in dictionary.
-	 * @param list The input data, spell errors in arraylist.
-	 * @return The switched key and value of spell errors in dictionary.
-	 */
-	public static Map<String, String> createDictionary(ArrayList<String> list) {
-        
-    }
-	
-	/**
 	 * Returns corrections of spell errors.
 	 * @param dictionary The switched key and value of spell errors in dictionary.
 	 * @return The corrections of spell errors.
