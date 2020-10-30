@@ -8,43 +8,42 @@ import java.util.Map;
 
 public class SpellCorrection {
 	
-	/**
-	 * Returns data in arraylist.
+	Map<String, String> dictionary;
+	
+	public SpellCorrection(String file) throws FileNotFoundException {
+		this.dictionary = loadDictionary(file);
+	}
+	
+	 /**
+	 * Returns load data in dictionary.
 	 * @param file The input data, spell errors text.
-	 * @return The data spell errors list.
+	 * @return The load data in dictionary.
 	 */
-	public static ArrayList<String> getDataList(File file) throws FileNotFoundException {
-		Scanner fileReader = new Scanner(file);
-        ArrayList<String> list = new ArrayList<String>();
-        while(fileReader.hasNextLine()) {
-            String data = fileReader.nextLine();
-            list.add(data);
-        }
-        fileReader.close();
-        return list;
-    }
+	public Map<String, String> loadDictionary(String file) throws FileNotFoundException {
+		File data = new File(file);
+		Scanner fileReader = new Scanner(data);
+		ArrayList<String> list = new ArrayList<String>();
+		while(fileReader.hasNextLine()) {
+			String line = fileReader.nextLine();
+			list.add(line);
+			}
+		fileReader.close();
+		
+		Map<String, String> dictionary = new HashMap<String, String>();
+		for (int i = 0; i < list.size(); i++) {
+			String words = list.get(i);
+			String[] line = words.split(":");
+			dictionary.put(line[1], line[0]);
+		}
+		return dictionary;
+	}
 	
 	/**
-	 * Returns data in dictionary.
-	 * @param list The input data, spell errors in arraylist.
-	 * @return The switched key and value of spell errors in dictionary.
+	 * Returns correct word.
+	 * @param text The word spelled incorrectly.
+	 * @return The correction of word spelled incorrectly.
 	 */
-	public static Map<String, String> createDictionary(ArrayList<String> list) {
-        Map<String, String> dictionary = new HashMap<String, String>();
-        for (int i = 0; i < list.size(); i++) {
-            String words = list.get(i);
-            String[] line = words.split(":");
-            dictionary.put(line[1], line[0]);
-        }
-        return dictionary;
-    }
-	
-	/**
-	 * Returns corrections of spell errors.
-	 * @param dictionary The switched key and value of spell errors in dictionary.
-	 * @return The corrections of spell errors.
-	 */
-	public static Map<String, String> newDictionary(Map<String, String> dictionary) {
+	public String getCorrection(String text) {
         Map<String, String> corrections = new HashMap<String, String>();
         for (Map.Entry<String,String> entry : dictionary.entrySet()) {
             String value = entry.getValue();
@@ -60,6 +59,7 @@ public class SpellCorrection {
             	corrections.put(key, value);
             }
         }
-        return corrections;
+        String correctWord = corrections.get(text);
+        return correctWord;
 	}
 }
