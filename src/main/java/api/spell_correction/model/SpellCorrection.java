@@ -11,7 +11,7 @@ public class SpellCorrection {
 	Map<String, String> dictionary;
 	
 	public SpellCorrection(String file) throws FileNotFoundException {
-		SpellCorrection.dictionary = loadDictionary(file);
+		this.dictionary = loadDictionary(file);
 	}
 	
 	 /**
