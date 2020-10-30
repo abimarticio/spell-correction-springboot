@@ -13,16 +13,16 @@ public class SpellCorrection {
 	 * @param file The input data, spell errors text.
 	 * @return The data spell errors list.
 	 */
-	public static ArrayList<String> getDataList(File file) throws FileNotFoundException {
+	public static Map<String, String> loadDictionary(String file) throws FileNotFoundException {
 		Scanner fileReader = new Scanner(file);
-        ArrayList<String> list = new ArrayList<String>();
-        while(fileReader.hasNextLine()) {
-            String data = fileReader.nextLine();
-            list.add(data);
-        }
-        fileReader.close();
-        return list;
-    }
+		ArrayList<String> list = new ArrayList<String>();
+		while(fileReader.hasNextLine()) {
+			String data = fileReader.nextLine();
+			list.add(data);
+			}
+		fileReader.close();
+		return list;
+		}
 	
 	/**
 	 * Returns data in dictionary.
