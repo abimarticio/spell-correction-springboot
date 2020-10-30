@@ -20,7 +20,8 @@ public class SpellCorrection {
 	 * @return The load data in dictionary.
 	 */
 	public static Map<String, String> loadDictionary(String file) throws FileNotFoundException {
-		Scanner fileReader = new Scanner(file);
+		File data = new File(file);
+		Scanner fileReader = new Scanner(data);
 		ArrayList<String> list = new ArrayList<String>();
 		while(fileReader.hasNextLine()) {
 			String data = fileReader.nextLine();
