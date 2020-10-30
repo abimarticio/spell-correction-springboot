@@ -36,7 +36,7 @@ public class SpellCorrection {
 	 * @param dictionary The switched key and value of spell errors in dictionary.
 	 * @return The corrections of spell errors.
 	 */
-	public static Map<String, String> newDictionary(Map<String, String> dictionary) {
+	public static String getCorrection(String text) {
         Map<String, String> corrections = new HashMap<String, String>();
         for (Map.Entry<String,String> entry : dictionary.entrySet()) {
             String value = entry.getValue();
