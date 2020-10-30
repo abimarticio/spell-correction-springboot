@@ -24,8 +24,8 @@ public class SpellCorrection {
 		Scanner fileReader = new Scanner(data);
 		ArrayList<String> list = new ArrayList<String>();
 		while(fileReader.hasNextLine()) {
-			String data = fileReader.nextLine();
-			list.add(data);
+			String line = fileReader.nextLine();
+			list.add(line);
 			}
 		fileReader.close();
 		
