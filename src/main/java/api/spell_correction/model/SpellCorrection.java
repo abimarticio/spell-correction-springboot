@@ -19,7 +19,7 @@ public class SpellCorrection {
 	 * @param file The input data, spell errors text.
 	 * @return The load data in dictionary.
 	 */
-	public static Map<String, String> loadDictionary(String file) throws FileNotFoundException {
+	public Map<String, String> loadDictionary(String file) throws FileNotFoundException {
 		File data = new File(file);
 		Scanner fileReader = new Scanner(data);
 		ArrayList<String> list = new ArrayList<String>();
