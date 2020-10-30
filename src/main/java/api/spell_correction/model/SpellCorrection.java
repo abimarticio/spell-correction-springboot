@@ -21,8 +21,15 @@ public class SpellCorrection {
 			list.add(data);
 			}
 		fileReader.close();
-		return list;
+		
+		Map<String, String> dictionary = new HashMap<String, String>();
+		for (int i = 0; i < list.size(); i++) {
+			String words = list.get(i);
+			String[] line = words.split(":");
+			dictionary.put(line[1], line[0]);
 		}
+		return dictionary;
+	}
 	
 	/**
 	 * Returns data in dictionary.
@@ -30,13 +37,7 @@ public class SpellCorrection {
 	 * @return The switched key and value of spell errors in dictionary.
 	 */
 	public static Map<String, String> createDictionary(ArrayList<String> list) {
-        Map<String, String> dictionary = new HashMap<String, String>();
-        for (int i = 0; i < list.size(); i++) {
-            String words = list.get(i);
-            String[] line = words.split(":");
-            dictionary.put(line[1], line[0]);
-        }
-        return dictionary;
+        
     }
 	
 	/**
