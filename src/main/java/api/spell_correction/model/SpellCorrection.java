@@ -32,9 +32,9 @@ public class SpellCorrection {
 	}
 	
 	/**
-	 * Returns corrections of spell errors.
-	 * @param dictionary The switched key and value of spell errors in dictionary.
-	 * @return The corrections of spell errors.
+	 * Returns correct word.
+	 * @param text The word spelled incorrectly.
+	 * @return The correction of word spelled incorrectly.
 	 */
 	public static String getCorrection(String text) {
         Map<String, String> corrections = new HashMap<String, String>();
