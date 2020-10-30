@@ -8,6 +8,12 @@ import java.util.Map;
 
 public class SpellCorrection {
 	
+	static Map<String, String> dictionary;
+	
+	public SpellCorrection(String file) throws FileNotFoundException {
+		SpellCorrection.dictionary = loadDictionary(file);
+	}
+	
 	 /**
 	 * Returns load data in dictionary.
 	 * @param file The input data, spell errors text.
