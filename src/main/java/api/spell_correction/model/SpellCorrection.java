@@ -43,7 +43,7 @@ public class SpellCorrection {
 	 * @param text The word spelled incorrectly.
 	 * @return The correction of word spelled incorrectly.
 	 */
-	public static String getCorrection(String text) {
+	public String getCorrection(String text) {
         Map<String, String> corrections = new HashMap<String, String>();
         for (Map.Entry<String,String> entry : dictionary.entrySet()) {
             String value = entry.getValue();
