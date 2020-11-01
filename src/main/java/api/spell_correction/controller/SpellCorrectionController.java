@@ -13,5 +13,7 @@ public class SpellCorrectionController {
 	@GetMapping("/spell-correction")
 	public String word(@RequestParam(value="text", required=true) String text) throws FileNotFoundException {
 		SpellCorrection spellCorrection = new SpellCorrection("src/main/resources/static/spell-errors.txt");
+		String correctWord = spellCorrection.getCorrection(text);
+		return correctWord;
 	} 
 }
